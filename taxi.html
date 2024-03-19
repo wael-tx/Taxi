@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxi wael</title>
+  <style>
+    body {
+      font-family: cursive;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Taxi wael</h1>
+  </header>
+
+  <main>
+    <section id="booking-form">
+      <h2>Bestill Taxi</h2>
+      <form id="taxi-form">
+        <label for="pickup-location">Hentested:</label>
+        <input type="text" id="pickup-location" required>
+        <label for="dropoff-location">Leveringssted:</label>
+        <input type="text" id="dropoff-location" required>
+        <button type="submit">Bestill Taxi</button>
+      </form>
+    </section>
+    
+    <section id="booking-status">
+      <h2>Bestillingsstatus</h2>
+      <p id="status-message">Vent på bestilling...</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Taxi Bedrift. Alle rettigheter reservert.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('taxi-form');
+      const statusMessage = document.getElementById('status-message');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const pickupLocation = document.getElementById('pickup-location').value;
+        const dropoffLocation = document.getElementById('dropoff-location').value;
+
+        // Simulate booking process (replace with actual functionality)
+        setTimeout(function() {
+          statusMessage.textContent = `Taxi bestilt fra ${pickupLocation} til ${dropoffLocation}.`;
+        }, 2000);
+      });
+    });
+  </script>
+</body>
+</html>
